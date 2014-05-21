@@ -68,6 +68,7 @@ class Route(object):
         self.gateway_id = None
         self.instance_id = None
         self.state = None
+        self.network_interface_id = None
 
     def __repr__(self):
         return 'Route:%s' % self.destination_cidr_block
@@ -84,6 +85,8 @@ class Route(object):
             self.instance_id = value
         elif name == 'state':
             self.state = value
+        elif name == 'networkInterfaceId':
+            self.network_interface_id = value
 
 class RouteAssociation(object):
     def __init__(self, connection=None):
